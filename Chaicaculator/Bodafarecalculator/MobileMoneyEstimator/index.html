@@ -1,0 +1,25 @@
+<script>
+function estimateTransactionFee(amountToSend) {
+  const percentageFee = amountToSend * 0.015; // 1.5% of amount
+  const fee = Math.min(Math.max(percentageFee, 10), 70); // Enforce min = 10, max = 70
+  const totalDebited = amountToSend + fee;
+
+  alert(
+    `Sending KES ${amountToSend}:\n` +
+    `Calculated Transaction Fee: KES ${fee}\n` +
+    `Total amount to be debited: KES ${totalDebited}\n\nSend Money Securely!`
+  );
+}
+
+// Prompt user for input
+const input = prompt("Unatuma Ngapi? (KES):");
+const amountToSend = Number(input);
+
+// Validate input and call the function
+if (!isNaN(amountToSend) && amountToSend > 0) {
+  estimateTransactionFee(amountToSend);
+} else {
+  alert("Tafadhali weka kiasi sahihi cha kutuma.");
+  console.log("Tafadhali weka kiasi sahihi cha kutuma.");
+}
+</script>
